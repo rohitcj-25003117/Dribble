@@ -1,5 +1,7 @@
 # Project Responsive Web Design using Bootstrap
-## Date:
+## Date: 19-11-2025
+## Name: CJ ROHIT
+## RegNo: 212224243005
 
 ## AIM:
 To create a simplified clone of Dribbble (https://dribbble.com/) landing page.
@@ -27,144 +29,243 @@ Publish the website in the LocalHost.
 
 ## PROGRAM :
 ```
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Responsive Website using Bootstrap</title>
-
-  <!-- Bootstrap CSS -->
-  <link 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
-    rel="stylesheet"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dribbble Shots</title>
   <style>
-    .hero {
-      background: url("https://images.unsplash.com/photo-1519125323398-675f0ddb6308")
-        center/cover no-repeat;
-      height: 80vh;
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+    }
+
+    .navbar {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
+      background: #2d2d2d;
       color: white;
-      text-shadow: 2px 2px 5px black;
+      padding: 10px 20px;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar .nav-links,
+    .navbar .auth {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .sub-header {
+      background: #fafafa;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .sub-actions button {
+      margin-left: 10px;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      background: white;
+      cursor: pointer;
+    }
+
+    .sign-up {
+      background: #ea4c89;
+      color: white;
+      border: none;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      padding: 15px 20px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+    }
+
+    .card .info {
+      padding: 10px;
+    }
+
+    .card .author {
+      font-weight: bold;
+      margin: 0 0 4px;
+    }
+
+    .card .stats {
+      font-size: 0.8rem;
+      color: #666;
+      margin: 0;
     }
   </style>
 </head>
 <body>
+  <header class="navbar">
+    <div class="logo">Dribbble</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="# "> Shots</a></li>
+        <li><a href="# "> Designers</a></li>
+        <li><a href="# "> Teams</a></li>
+        <li><a href="# "> Community</a></li>
+        <li><a href="# "> Jobs</a></li>
+      </ul>
+    </nav>
+    <div class="auth">
+      <a href="#">Sign up</a>
+      <a href="#">Sign in</a>
+    </div>
+  </header>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">MyBootstrapSite</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
+  <section class="sub-header">
+    <p>What are you working on? <strong>Dribbble</strong> is show and tell for designers.</p>
+    <div class="sub-actions">
+      <button>Learn more</button>
+      <button class="sign-up">Sign up</button>
+    </div>
+  </section>
+
+  <section class="filter-bar">
+    <select><option>Popular</option></select>
+    <select><option>Shots</option></select>
+    <select><option>Now</option></select>
+  </section>
+
+  <main class="grid">
+
+    <div class="card">
+      <img src="p1.png" alt="Design shot">
+      <div class="info">
+        <p class="author">Indhu Priya</p>
+        <p class="stats">9,876 views • 14 comments • 290 likes</p>
       </div>
     </div>
-  </nav>
-
-  <!-- HERO SECTION -->
-  <section class="hero text-center">
-    <div>
-      <h1 class="display-4 fw-bold">Responsive Web Design</h1>
-      <p class="lead">Built Completely Using Bootstrap</p>
-      <a href="#features" class="btn btn-primary btn-lg">Explore</a>
-    </div>
-  </section>
-
-  <!-- FEATURES SECTION -->
-  <section id="features" class="py-5">
-    <div class="container text-center">
-      <h2 class="mb-4 fw-bold">Features</h2>
-
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="p-4 shadow rounded">
-            <h4>100% Responsive</h4>
-            <p>Website adjusts perfectly on mobile, tablet & desktop screens.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="p-4 shadow rounded">
-            <h4>Bootstrap 5</h4>
-            <p>Uses the latest version of Bootstrap for layout & design.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="p-4 shadow rounded">
-            <h4>Clean UI</h4>
-            <p>Modern and minimal user interface for better experience.</p>
-          </div>
-        </div>
+    <div class="card">
+      <img src="p2.png" alt="Design shot">
+      <div class="info">
+        <p class="author">Praneya</p>
+        <p class="stats">2,222 views • 13 comments • 236 likes</p>
       </div>
     </div>
-  </section>
-
-  <!-- IMAGE GALLERY -->
-  <section id="gallery" class="py-5 bg-light">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-4">Gallery</h2>
-
-      <div class="row g-3">
-        <div class="col-md-4 col-6">
-          <img src="https://picsum.photos/400?1" class="img-fluid rounded shadow" />
-        </div>
-        <div class="col-md-4 col-6">
-          <img src="https://picsum.photos/400?2" class="img-fluid rounded shadow" />
-        </div>
-        <div class="col-md-4 col-6">
-          <img src="https://picsum.photos/400?3" class="img-fluid rounded shadow" />
-        </div>
+    <div class="card">
+      <img src="p3.png" alt="Design shot">
+      <div class="info">
+        <p class="author">James-web desinger</p>
+        <p class="stats">3,985 views • 17 comments • 264 likes</p>
       </div>
     </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="py-5">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-4">Contact Us</h2>
-
-      <form class="mx-auto" style="max-width: 600px;">
-        <input class="form-control mb-3" type="text" placeholder="Name" required />
-        <input class="form-control mb-3" type="email" placeholder="Email" required />
-        <textarea class="form-control mb-3" rows="4" placeholder="Message"></textarea>
-
-        <button class="btn btn-success px-4">Send Message</button>
-      </form>
+    <div class="card">
+      <img src="p4.png" alt="Design shot">
+      <div class="info">
+        <p class="author">Aashika Jain</p>
+        <p class="stats">292 views • 23 comments • 186 likes</p>
+      </div>
     </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-dark text-light text-center py-3">
-    <p class="m-0">&copy; 2025 MyBootstrapSite | All Rights Reserved</p>
-  </footer>
-
-  <!-- Bootstrap JS -->
-  <script 
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
-  </script>
-
+    <div class="card">
+      <img src="p5.png" alt="Design shot">
+      <div class="info">
+        <p class="author">Jackson Jhons</p>
+        <p class="stats">2,602 views • 23 comments • 186 likes</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="p6.png" alt="Design shot">
+      <div class="info">
+        <p class="author">Diana</p>
+        <p class="stats">2,602 views • 23 comments • 186 likes</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="p7.png" alt="Design shot">
+      <div class="info">
+        <p class="author">Ronas IT/UV</p>
+        <p class="stats">2,602 views • 23 comments • 186 likes</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="p8.png" alt="Design shot">
+      <div class="info">
+        <p class="author">Chandhana</p>
+        <p class="stats">2,602 views • 23 comments • 186 likes</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="p9.png" alt="Design shot">
+      <div class="info">
+        <p class="author">Mr.Mockup</p>
+        <p class="stats">2,602 views • 23 comments • 186 likes</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="p10.png" alt="Design shot">
+      <div class="info">
+        <p class="author">Md.Harun</p>
+        <p class="stats">2,602 views • 23 comments • 186 likes</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="p11.png" alt="Design shot">
+      <div class="info">
+        <p class="author">Fernia Fender</p>
+        <p class="stats">2,602 views • 23 comments • 186 likes</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="p12.png" alt="Design shot">
+      <div class="info">
+        <p class="author">Adom</p>
+        <p class="stats">2,602 views • 23 comments • 186 likes</p>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
-```
-## OUTPUT:
-![alt text](<Screenshot 2025-11-16 222741.png>)
-![alt text](<Screenshot 2025-11-16 222810.png>)
 
+```
+
+
+## OUTPUT:
+
+![alt text](<finalpro/proapp/static/Screenshot 2025-11-18 134943.png>)
 
 ## RESULT:
 The Project for responsive web design using Bootstrap is completed successfully.
